@@ -1,5 +1,5 @@
 # MidiSoftTakeover
-A simple script which allows midi soft takeover for generic midi controllers. Requires a virtual midi port.
+A simple script which allows midi soft takeover for DAWs that do not support it. Requires a virtual midi port.
 
 HOWTO:
 - Download and install a virtual midi driver (I used loopMIDI by Tobias Erichsen, http://www.tobias-erichsen.de/software/loopmidi.html)
