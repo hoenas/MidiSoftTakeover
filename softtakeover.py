@@ -19,14 +19,18 @@ import time
 import rtmidi
 
 # open config file
-lineCounter = 0
-with open("config.txt") as file:
-    line = file.readline()
-    line = line.replace("\n", "")
-    device_name = line
-    line = file.readline()
-    line = line.replace("\n", "")
-    virtual_device_name = line
+try:
+    with open("config.txt") as file:
+        line = file.readline()
+        line = line.replace("\n", "")
+        device_name = line
+        line = file.readline()
+        line = line.replace("\n", "")
+        virtual_device_name = line
+except:
+    print "config.txt not found!"
+    raw_input("Press enter to exit...")
+    exit()
 
 momentumFactor = 0.4
 minThreshold = 10
@@ -49,6 +53,7 @@ for port in rtmidi.MidiIn().get_ports():
 # exit, if device was not found
 if inputPort == None:
     print "Input device", device_name, "not found!"
+    raw_input("Press enter to exit...")
     exit()
 
 # search for output device
